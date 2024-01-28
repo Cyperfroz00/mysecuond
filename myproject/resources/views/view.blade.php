@@ -33,6 +33,8 @@
                     <td>
                         <a href="/update/{{$item->id}}" class="btn btn-warning">Update</a>
                         <button class="btn btn-danger">Delete</button>
+                        <a href="/add" class="btn btn-warning">Home</a>
+                      
                     </td>
                 </tr>
                 @endforeach
