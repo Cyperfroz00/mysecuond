@@ -57,7 +57,6 @@
                     <input type="file" name="profile" id="">
                     <input type="hidden" name="old_thumbnail" value="{{$update_data->profile}}" id="">
                     <img src="{{url('image/'.$update_data->profile)}}" alt="Profile" width="80px" height="110px">
-                    
                     <button class="btn-lightblue" type="submit">Update</button>
                     <button class="btn btn-danger" type="reset">Reset</button>
 
