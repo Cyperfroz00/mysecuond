@@ -104,7 +104,7 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Student $student)
+    public function update (Request $request, Student $student)
     {
         $this->validate($request,[
             'name'=>'required|string|max:255|min:2',
@@ -115,14 +115,14 @@ class StudentController extends Controller
             // 'profile' => 'required|mimes:jpg,png,gif,jpeg',
         ]);
 
-        $name = $request -> name;
-        $gender = $request -> gender;
-        $att = $request -> attendent;
-        $act = $request -> activity;
-        $exam = $request -> exam;
-        $profile = $request -> profile;
-        $id = $request -> id;
-        
+            $name = $request -> name;
+            $gender = $request -> gender;
+            $att = $request -> attendent;
+            $act = $request -> activity;
+            $exam = $request -> exam;
+            $profile = $request -> profile;
+            $id = $request -> id;
+            
         if($profile){
             $newProfile = rand(1,99999).'-'.$profile->getClientOriginalName();
             $path = 'image';
@@ -131,35 +131,36 @@ class StudentController extends Controller
             $newProfile = $request->old_thumbnail;
         }
 
-        $total = $att + $act;
-        $avg = $total / 3;
+            $total = $att + $act;
+            $avg = $total / 3;
 
-        if($avg>=90){
-            $grade = 'A';
-        } else if ($avg >=80){
-            $grade = 'B';
-        } else if($avg>=70){
-            $grade ='C';
-        } else if($avg>=60){
-            $grade ='D';
-        } else if ($avg>=50){
-            $grade ='E';
-        } else{
-            $grade='F';
-        }
+            if($avg>=90){
+                $grade = 'A';
+            } else if ($avg >=80){
+                $grade = 'B';
+            } else if($avg>=70){
+                $grade ='C';
+            } else if($avg>=60){
+                $grade ='D';
+            } else if ($avg>=50){
+                $grade ='E';
+            } else{
+                $grade='F';
+            }
 
-        Student::where ('id',$id)->update([
-           'name' => $name,
-           'gender' => $gender,
-           'Attendent' => $att,
-           'Activity' => $act,
-           'Exam' => $exam,
-           'Total'=> $total,
-           'Average'=> $avg,
-           'grade' => $grade,
-           'profile'=> $profile,
-        ]);
-        return redirect('/view') ->with ('success','update Success');
+            Student::where('id',$id)->update([
+                'name' => $name,
+                'gender' => $gender,
+                'Attendent' => $att,
+                'Activity' => $act,
+                'Exam' => $exam,
+                'Total'=> $total,
+                'Average'=> $avg,
+                'grade' => $grade,
+                'profile'=> $newProfile,
+            ]);
+
+        return redirect('/view') ->with ('success','Update Success');;
     
     }
 

@@ -15,10 +15,10 @@
                 <h3>Update Student</h3>
             </div>
             <div class="add">
-                <form action="/add-data" method="POST" enctype="multipart/form-data">
+                <form action="/update-data" method="POST" enctype="multipart/form-data">
                     @csrf
                     <label for="">ID </label>
-                    <input type="text" name="" value="{{$id}}" id="" placeholder="ID">
+                    <input type="text" name="id" value="{{$id}}" id="" placeholder="ID">
                     
                     <label for="">Name </label>
                         @if($errors->has('name'))
@@ -54,13 +54,13 @@
                     <input type="text" name="exam" value="{{$update_data->Exam}}" class="@if($errors->has('exam')) is-invalid @endif" id="" placeholder="Exam:">
 
                     <label for="">Profile</label>
-                        @if($errors->has('profile'))
-                            <span class="text-danger" style="font-size: 14px">require type jpg,png,gif,jpeg</span>
-                        @endif
-                    <input type="file" name="profile" class="@if($errors->has('profile')) is-invalid @endif" id="">
+                    <input type="file" name="profile" id="">
+                    <input type="hidden" name="old_thumbnail" value="{{$update_data->profile}}" id="">
                     <img src="{{url('image/'.$update_data->profile)}}" alt="Profile" width="80px" height="110px">
+                    
                     <button class="btn-lightblue" type="submit">Update</button>
-                    <button class="btn btn-danger" type="reset">Delete</button>
+                    <button class="btn btn-danger" type="reset">Reset</button>
+
                 </form>
             </div>
         </div>
