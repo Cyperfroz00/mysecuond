@@ -1,16 +1,6 @@
 <x-dashboard>
     <div class="data">
         <div class="detail-data">
-            @if (Session::has('success'))
-                <script>
-                    Swal.fire({
-                            icon: "success",
-                            title: "success",
-                            text: "Update Student Successful!",
-                            });
-                </script>
-            @endif
-            
             <div class="data-title">
                 <h3>Update Student</h3>
             </div>

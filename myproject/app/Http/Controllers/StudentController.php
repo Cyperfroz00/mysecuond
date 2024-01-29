@@ -160,7 +160,7 @@ class StudentController extends Controller
                 'profile'=> $newProfile,
             ]);
 
-        return redirect('/view') ->with ('success','Update Success');
+        return redirect('/view') ->with ('update success','Update Success');
     
     }
 
