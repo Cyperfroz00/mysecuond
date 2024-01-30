@@ -5,7 +5,7 @@
                 <script>
                     Swal.fire({
                             icon: "success",
-                            title: "update success",
+                            title: "Updated",
                             text: "Update Student Successful!",
                             });
                 </script>
