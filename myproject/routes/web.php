@@ -25,5 +25,6 @@ Route::controller(StudentController::class)->group(function(){
     Route::get('/view','show');
     Route::get('/update/{id}','edit');
     Route::post('/update-data','update');
+    Route::delete('/delete','destroy');
 });
 

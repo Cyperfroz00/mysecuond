@@ -60,11 +60,13 @@
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                          <form action="" method="">
+                          <form action="/delete" method="POST">
+                            @method('DELETE');
+                            @csrf
                             <input type="text" name="remove_id" id="remove_id">
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-danger">Delete</button>
+                              <button type="button" id="btn-delete" class="btn btn-danger">Save Change</button>
                             </div>
                           </form>
                         </div>
