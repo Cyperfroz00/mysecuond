@@ -41,17 +41,16 @@
 
                     <td>
                         <a href="/update/{{$item->id}}" class="btn btn-warning">Update</a>
-                        <button class="btn btn-danger">Delete</button>
+                        <button type="button" data-remove="{{$item->id}}"  id="btn-delete" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
                         <a href="/add" class="btn btn-warning">Home</a>
                       
                     </td>
                 </tr>
                 @endforeach
                 <!-- Button trigger modal -->
-                  <button type="button" value="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  {{-- <button type="button" value="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Launch demo modal
-                  </button>
-
+                  </button> --}}
                   <!-- Modal -->
                   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -60,13 +59,19 @@
                           <h1 class="modal-title fs-5" id="exampleModalLabel"><span style="color: red " >Do you want to delete ?</span></h1>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-danger">Delete</button>
+                        <div class="modal-body">
+                          <form action="" method="">
+                            <input type="text" name="remove_id" id="remove_id">
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-danger">Delete</button>
+                            </div>
+                          </form>
                         </div>
                       </div>
                     </div>
                   </div>
+
                 </div>
             </table>
         </div>
