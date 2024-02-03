@@ -10,15 +10,6 @@
                             });
                 </script>
             @endif
-            @if (Session::has('success'))
-                <script>
-                    Swal.fire({
-                            icon: "success",
-                            title: "success",
-                            text: "Insert Student Successful!",
-                            });
-                </script>
-            @endif
             <div class="data-title">
                 <h3>Add Student</h3>
             </div>

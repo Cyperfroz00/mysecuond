@@ -7,8 +7,8 @@
             <div class="add">
                 <form action="/update-data" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <label for="">Student ID: {{$id}}</label><br>
-                    <input type="hidden" name="id" value="{{$id}}" id="" placeholder="ID">
+                    <label for="">Student ID</label><br>
+                    <input type="text" name="id" value="{{$id}}" id="" placeholder="ID">
                     <label for="">Name</label>
                         @if($errors->has('name'))
                             <span class="text-danger" style="font-size: 14px">require text only</span>

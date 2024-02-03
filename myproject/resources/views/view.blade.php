@@ -14,8 +14,8 @@
                 <script>
                     Swal.fire({
                             icon: "success",
-                            title: "Deleted",
-                            text: "Deleted Student Successful!",
+                            title: "Deleted Success!",
+                            text: "Your file has been deleted.",
                             });
                 </script>
             @endif
@@ -69,7 +69,7 @@
                           <form action="/delete" method="POST">
                              @method('DELETE')
                              @csrf
-                              <input type="hidden" value="remove_id" id="remove_id">
+                              <input type="hidden" name="remove_id" id="remove_id">
                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                               <button class="btn btn-danger">Save Change</button>
                           </form>
