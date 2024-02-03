@@ -170,6 +170,7 @@ class StudentController extends Controller
     public function destroy(Request $request ,Student $student)
     {
         $remove_id = $request->remove_id;
-        return $remove_id;
+        Student::where('id',$remove_id)-> delete();
+        return redirect('/view')->with('deletesuccess','');
     }
 }
