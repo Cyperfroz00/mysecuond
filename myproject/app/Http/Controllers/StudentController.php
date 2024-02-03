@@ -87,8 +87,16 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        $data = Student::all();
-        return view('View',compact('data'));
+        if(empty($_GET['query'])){
+            $data = $student->select('*')->orderBy('id','DESC')->get();
+            $total_student = $student->count();
+            return view('View',compact('data','total_student'));
+        } else {
+            $query = $_GET['query'];
+            $data = $student->select('*')->where('name','like','%'.$query.'%')->orderBy('id','DESC')->get();
+            $total_student = $student->count();
+            return view('View',compact('data','total_student'));
+        }
     }
 
     /**

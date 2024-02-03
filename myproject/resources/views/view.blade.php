@@ -19,6 +19,16 @@
                             });
                 </script>
             @endif
+            <div class="data-title d-flex justify-content-center">
+              <h3 class="me-5">View Student</h3>
+              <div class="count mx-5">
+                <h3>There are {{$total_student}} Students</h3>
+              </div>
+              <form action="" method="GET" class="d-flex">
+                <input type="text" name="query" placeholder="Name for Search.." id="" class="form-control">
+                <button class="btn btn-outline-success">Search</button>
+              </form>
+            </div>
             <table class="table table-dark table-sm">
                 <tr>
                     <th>ID</th>
