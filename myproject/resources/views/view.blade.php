@@ -70,7 +70,7 @@
                       <div class="modal-content">
                         <div class="modal-header">
                               <h1 class="modal-title fs-5" id="exampleModalLabel">
-                                <span style="color: red " >Are you sure to delete student name : {{$item->name}}?</span>
+                                <span style="color: red " >Are you sure to delete student?</span>
                               </h1>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
