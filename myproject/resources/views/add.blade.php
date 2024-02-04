@@ -58,6 +58,7 @@
                   
                     <button class="btn-lightblue" type="submit">Submit</button>
                     <button class="btn-clear" type="reset">Reset</button>
+                    <button class="btn-lightblue" type="submit" ><a href="/view" >View Student</a></button>
                 </form>
             </div>
         </div>

@@ -13,7 +13,7 @@
                         @if($errors->has('name'))
                             <span class="text-danger" style="font-size: 14px">require text only</span>
                         @endif   
-                    <input type="text" name="name" value="{{$update_data->name}}"  class="@if($errors->has('name')) is-invalid @endif" id="name" placeholder="Name:">
+                    <input type="text" name="name" value="{{$update_data->name}}" class="@if($errors->has('name')) is-invalid @endif" id="name" placeholder="Name:">
 
                     <label for="">Gender</label>
                         @if($errors->has('gender'))
@@ -48,7 +48,7 @@
                     <img src="{{url('image/'.$update_data->profile)}}" alt="Profile" width="80px" height="110px">
                     <button class="btn-lightblue" type="submit">Update</button>
                     <button class="btn btn-danger" type="reset">Reset</button>
-
+                    
                 </form>
             </div>
         </div>
