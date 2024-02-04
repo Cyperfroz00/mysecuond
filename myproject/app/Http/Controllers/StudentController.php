@@ -51,7 +51,7 @@ class StudentController extends Controller
             $profile->move($path,$newProfile);
         }
 
-        $total = $att + $act;
+        $total = $att + $act +$exam;
         $avg = $total / 3;
 
         if($avg>=90){
@@ -139,7 +139,7 @@ class StudentController extends Controller
             $newProfile = $request->old_thumbnail;
         }
 
-            $total = $att + $act;
+            $total = $att + $act + $exam;
             $avg = $total / 3;
 
             if($avg>=90){
